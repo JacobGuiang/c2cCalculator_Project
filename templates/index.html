@@ -56,7 +56,7 @@
             <h1 class="mb-0">Calculator
             <!-- <span class="text-primary">Calculator</span> -->
           </h1>
-          <div class="subheading mb-5"><a class="js-scroll-trigger" href="#kinematics">Kinematics</a> · <a class="js-scroll-trigger" href="#kinematics">Quadratics</a>
+          <div class="subheading mb-5"><a class="js-scroll-trigger" href="#kinematics">Kinematics</a> · <a class="js-scroll-trigger" href="#quadratics">Quadratics</a>
           </div>
         </div>
       </section>
@@ -65,7 +65,7 @@
         <div class="my-auto">
           <h2 class="mb-5">Kinematics</h2>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <!--  <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Senior Web Developer</h3>
               <div class="subheading mb-3">Intelitec Solutions</div>
@@ -109,15 +109,37 @@
             </div>
           </div>
 
-        </div>
+        </div>-->
 
       </section>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="quadratics">
+      <section class="resume-section p-3 p-lg-5 flex-column" id="quadratics">
         <div class="my-auto">
           <h2 class="mb-5">Quadratics</h2>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        </div>
+        <div>
+            <form action="{{ url_for('process_inputs') }}" method="post">
+                <div class="input-box">
+                    <label for="input_name">a</label>
+                    <input type="text" name="input_a"  id="input_a" required>
+                </div>
+                <div class="input-box">
+                    <label for="input_name">b</label>
+                    <input type="text" name="input_b"  id="input_b" required>
+                </div>
+                <div class="input-box">
+                    <label for="input_name">c</label>
+                    <input type="text" name="input_c"  id="input_c" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    <div>
+      {% if input_data %} {{ input_data }} {% endif %}
+      <br />
+      {% if output %} {{ output }} {% endif %}
+    </div>
+          <!--<div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
               <h3 class="mb-0">University of Colorado Boulder</h3>
               <div class="subheading mb-3">Bachelor of Science</div>
@@ -138,7 +160,7 @@
             <div class="resume-date text-md-right">
               <span class="text-primary">August 2002 - May 2006</span>
             </div>
-          </div>
+          </div>-->
 
         </div>
       </section>

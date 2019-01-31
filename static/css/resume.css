@@ -150,4 +150,8 @@ a:hover, a:focus, a:active {
 .mb-0{
     color:#000000;
 }
+
+.input-box{
+    padding-top:5px;
+    padding-bottom:5px;
 }
