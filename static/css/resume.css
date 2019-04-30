@@ -154,4 +154,22 @@ a:hover, a:focus, a:active {
 .input-box{
     padding-top:5px;
     padding-bottom:5px;
+    float: right;
+}
+
+.green-border {
+    border: 1px solid green;
+}
+
+.input-box-container{
+    width: 211px;
+}
+
+.input-area{
+
+}
+
+.btn{
+    margin-left: 11%;
+    margin-top: 5px;
 }
