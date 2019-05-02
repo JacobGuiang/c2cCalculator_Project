@@ -153,5 +153,15 @@ def process_inputsK():
                 return render_template("index.html", scroll= "kinematics", output= "displacement = " + str(x) + "<br>" + "initial velocity = " + str(vNaught) + "<br>" + "final velocity = " + str(v) + "<br>" + "acceleration = " + str(a))
         except ValueError:
             return render_template("index.html", scroll= "kinematics", output = "invalid inputs; re-enter values")
+    elif all([xStr, aStr, tStr]):
+        try:
+            x = float(xStr)
+            a = float(aStr)
+            t = float(tStr)
+            vNaught = (x-.5*a*t**2)/t
+            v = vNaught + a*t
+            return render_template("index.html", scroll= "kinematics", output= "displacement = " + str(x) + "<br>" + "initial velocity = " + str(vNaught) + "<br>" + "final velocity = " + str(v) + "<br>" + "acceleration = " + str(a) + "<br>" + "time = " + str(t))
+        except ValueError:
+            return render_template("index.html", scroll= "kinematics", output = "invalid inputs; re-enter values")
     else:
         return render_template("index.html", scroll= "kinematics", output = "invalid inputs; re-enter values")

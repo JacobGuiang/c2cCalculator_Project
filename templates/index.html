@@ -74,32 +74,36 @@
           </section>
 
         <section class="resume-section p-3 p-lg-5 flex-column" id="kinematics">
+        <div class="container">
             <div class="my-auto">
               <h2 class="mb-5">Kinematics</h2>
               <p>enter known values; leave unknown values blank</p>
             </div>
+            <div class="row">
+            <div class="col">
+
             <div>
                 <form action="{{ url_for('process_inputsK') }}" method="post">
                     <div class="input-box-container">
                         <div class="input-box">
                             <label for="input-area">&Delta;x</label>
-                            <input class="input-area" type="number" step="any" name="kInput_displacement"  id="kInput_displacement" onmouseover="addGreenBorder(this)" onmouseout="removeGreenBorder(this)">
+                            <input class="input-area" type="number" step="any" name="kInput_displacement"  id="kInput_displacement" onmouseover="addGreenBorder(this)" onmouseout="removeGreenBorder(this)" placeholder="displacement (m)">
                         </div>
                         <div class="input-box">
                             <label for="input-area">v<sub>0</sub></label>
-                            <input class="input-area" type="number" step="any" name="kInput_vNaught"  id="kInput_vNaught" onmouseover="addGreenBorder(this)" onmouseout="removeGreenBorder(this)">
+                            <input class="input-area" type="number" step="any" name="kInput_vNaught"  id="kInput_vNaught" onmouseover="addGreenBorder(this)" onmouseout="removeGreenBorder(this)" placeholder="initial velocity (m/s)">
                         </div>
                         <div class="input-box">
                             <label for="input-area">v</label>
-                            <input class="input-area" type="number" step="any" name="kInput_v"  id="kInput_v" onmouseover="addGreenBorder(this)" onmouseout="removeGreenBorder(this)">
+                            <input class="input-area" type="number" step="any" name="kInput_v"  id="kInput_v" onmouseover="addGreenBorder(this)" onmouseout="removeGreenBorder(this)" placeholder="final velocity (m/s)">
                         </div>
                         <div class="input-box">
                             <label for="input-area">a</label>
-                            <input class="input-area" type="number" step="any" name="kInput_a"  id="kInput_a" onmouseover="addGreenBorder(this)" onmouseout="removeGreenBorder(this)">
+                            <input class="input-area" type="number" step="any" name="kInput_a"  id="kInput_a" onmouseover="addGreenBorder(this)" onmouseout="removeGreenBorder(this)" placeholder="acceleration (m/s²)">
                         </div>
                         <div class="input-box">
                             <label for="input-area">t</label>
-                            <input class="input-area" type="number" step="any" name="kInput_t"  id="kInput_t" onmouseover="addGreenBorder(this)" onmouseout="removeGreenBorder(this)">
+                            <input class="input-area" type="number" step="any" name="kInput_t"  id="kInput_t" onmouseover="addGreenBorder(this)" onmouseout="removeGreenBorder(this)" placeholder="time (s)">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
@@ -109,17 +113,22 @@
               {% if input_data %} {{ input_data }} {% endif %}
               <br />
               {% if output %} {{ output|safe }} {% endif %}
-
-
+            </div>
+            </div>
+            <div class="col"><img src="https://cdn.kastatic.org/googleusercontent/BO82YZEm2LGnHiU5RcqaKRltWAkf4MTXv-QcUCe09uVP2h-2FSWaYTzTtEHxhD2-sehTRstmwW1MdPpTI5aIKC4" display="block" margin-left="auto" margin-right="auto" align="middle"></div>
+            </div>
+            </div>
             </div>
           </section>
-
+        </div>
+        </div>
         <section class="resume-section p-3 p-lg-5 flex-column" id="quadratics">
             <div class="my-auto">
               <h2 class="mb-5">Quadratics</h2>
             </div>
 
             <div>
+                <p>enter coefficients of quadratic formula ax²+bx+c</p>
                 <form action="{{ url_for('process_inputsQ') }}" method="post">
                     <div class="input-box-container">
                         <div class="input-box">
